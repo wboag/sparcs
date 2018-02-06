@@ -101,9 +101,10 @@ def main():
                     print '\t\t%-25s: n=%5d\tmedian=%6d\tmean=%10.3f\tstd=%9.3f' % (race,num,median,mean,std)
 
                 # visualize
-		color = race.split('/')[0]
-		#pl.hist(vals, color=color, normed=1)
-		pl.hist(vals, color=color, normed=0)
+                if '--plot' in sys.argv:
+                    color = race.split('/')[0]
+                    #pl.hist(vals, color=color, normed=1)
+                    pl.hist(vals, color=color, normed=0)
 
             if '--plot' in sys.argv:
                 pl.xlabel(sys.argv[2])
